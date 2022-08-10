@@ -5,14 +5,6 @@ import Categories from './Categories';
 import items from './data';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-import SignIn from './Login';
 
 
 function MainPage() {

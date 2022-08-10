@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useForm } from "react-hook-form";
+
 
 function Copyright(props) {
   return (
@@ -29,14 +31,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  
+
+  const { register, handleSubmit, watch, errors } = useForm();
+  const onSubmit = data => console.log(data);
 
   return (
     <ThemeProvider theme={theme}>
@@ -66,7 +64,9 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
-            />
+            >
+              
+            </TextField>
             <TextField
               margin="normal"
               required
